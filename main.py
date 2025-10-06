@@ -10,6 +10,22 @@ def fifo(paginas, quadros):
                 memoria.append(p)
     return memoria
 
+# Função LRU, pega o menos recentemente usado
+def lru(paginas, quadros):
+    memoria = []
+    uso_recente = {}
+    for i, p in enumerate(paginas):
+        if p not in memoria:
+            if len(memoria) < quadros:
+                memoria.append(p)
+            else:
+                # Remove o menos recentemente usado que está na memória
+                lru_pagina = min(memoria, key=lambda x: uso_recente.get(x, -1))
+                memoria.remove(lru_pagina)
+                memoria.append(p)
+        uso_recente[p] = i  # Atualiza o tempo de uso
+    return memoria
+
 seq_a = [4,3,25,8,19,6,25,8,16,35,45,22,8,3,16,25,7]
 seq_b = [4,5,7,9,46,45,14,4,64,7,65,2,1,6,8,45,14,11]
 seq_c = [4,6,7,8,1,6,10,15,16,4,2,1,4,6,12,15,16,11]
@@ -22,3 +38,10 @@ print("b)", fifo(seq_b, quadros))
 print("c)", fifo(seq_c, quadros))
 # qual quadro na memória possuirá a página 7 ?
 print("Página 7 está no quadro 8")
+
+print("\n=== LRU ===")
+print("a)", lru(seq_a, quadros))
+print("b)", lru(seq_b, quadros))
+print("c)", lru(seq_c, quadros))
+# qual quadro na memória possuirá a página 11 ?
+print("Página 11 está no quadro 8")
