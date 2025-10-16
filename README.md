@@ -3,7 +3,7 @@
 ## Integrantes do Grupo
 - Roberto Zhou 
 - Matheus De Bortoli Silva  
-
+- Rafael Gabardo
 ---
 
 ## Descrição do Trabalho
