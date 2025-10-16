@@ -6,6 +6,8 @@
 - Rafael Gabardo
 ---
 
+## LINK: <a href="https://youtu.be/A6humEFcQqc">TDE 2 - MAPEAMENTO MEMÓRIA CACHE<a/>
+
 ## Descrição do Trabalho
 Este trabalho consiste em pesquisar, implementar e explicar os algoritmos de substituição de páginas **MRU**, **LRU** e **FIFO**, utilizando a linguagem de programação de preferência do grupo. A atividade inclui a execução de testes com sequências de páginas e análise dos resultados.
 
